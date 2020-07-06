@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiGithubService } from 'src/app/core/service/api-github.service';
 
 @Component({
   selector: 'app-main-page',
@@ -7,9 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private apiGithubService: ApiGithubService) { 
+    
+  }
 
   ngOnInit(): void {
+    
+  }
+
+  teste(){
+    this.apiGithubService.getTeste().subscribe(
+      data => {
+        console.log(data);
+      },
+      error => {
+        console.log(error);
+      }
+    )
   }
 
 }
