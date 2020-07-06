@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiGithubService } from 'src/app/core/service/api-github.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-main-page',
@@ -8,23 +9,30 @@ import { ApiGithubService } from 'src/app/core/service/api-github.service';
 })
 export class MainPageComponent implements OnInit {
 
+  dateRepositories:any;
+
   constructor(private apiGithubService: ApiGithubService) { 
     
   }
 
   ngOnInit(): void {
-    
+    this.getRepositories();
   }
 
-  teste(){
-    this.apiGithubService.getTeste().subscribe(
+  getRepositories(){
+    this.apiGithubService.getRepo().subscribe(
       data => {
-        console.log(data);
+        this.dateRepositories = data;
+        console.log(this.dateRepositories);
       },
       error => {
         console.log(error);
       }
     )
+  }
+
+  linkStoryPulls(link:string){
+    console.log(link);
   }
 
 }

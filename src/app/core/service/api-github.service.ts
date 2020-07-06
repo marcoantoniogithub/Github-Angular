@@ -9,7 +9,11 @@ export class ApiGithubService {
 
   constructor(private http: HttpClient) { }
 
-  getTeste(): Observable<any>{
+  getRepo(): Observable<any>{
     return this.http.get('https://api.github.com/search/repositories?q=language:Javascript&sort=stars&page=1')
+  }
+
+  getStoryPulls(link:string): Observable<any>{
+    return this.http.get(link);
   }
 }
