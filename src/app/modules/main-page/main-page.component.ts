@@ -25,7 +25,6 @@ export class MainPageComponent implements OnInit {
     this.apiGithubService.getRepo().subscribe(
       data => {
         this.dateRepositories = data;
-        console.log(this.dateRepositories);
       },
       error => {
         console.log(error);

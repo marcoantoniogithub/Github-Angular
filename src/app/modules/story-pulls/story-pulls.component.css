@@ -30,4 +30,5 @@ nav h1 {
 
 nav button {
     float: left;
+    position: absolute;
 }

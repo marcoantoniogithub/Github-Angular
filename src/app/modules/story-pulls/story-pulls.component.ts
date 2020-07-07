@@ -22,10 +22,6 @@ export class StoryPullsComponent implements OnInit {
     this.apiGithubService.getStoryPulls(owner, repo).subscribe(
       data => {
         this.datePulls = data;
-        console.log(this.datePulls);
-        this.datePulls.map( element => {
-          console.log(element.created_at);
-        });
       },
       error => {
         console.log(error);
