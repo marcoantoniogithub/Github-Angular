@@ -1,0 +1,13 @@
+<div *ngFor="let pull of datePulls">
+    <div class="container">
+        <div>
+            <img src="{{pull.user.avatar_url}}" alt="" width="154px">
+        </div>
+        <div class="conteudo">
+            <p>nome: {{pull.user.login}}</p>
+            <p>data: {{pull.created_at}}</p>
+        </div>
+    </div>
+    <p>Title: {{pull.title}}</p>
+        <p>body: {{pull.body}}</p>
+</div>

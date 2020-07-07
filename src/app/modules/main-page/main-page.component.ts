@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiGithubService } from 'src/app/core/service/api-github.service';
-import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-main-page',
@@ -11,7 +11,9 @@ export class MainPageComponent implements OnInit {
 
   dateRepositories:any;
 
-  constructor(private apiGithubService: ApiGithubService) { 
+  constructor(
+    private apiGithubService: ApiGithubService,
+    private router:Router,) { 
     
   }
 
@@ -31,8 +33,9 @@ export class MainPageComponent implements OnInit {
     )
   }
 
-  linkStoryPulls(link:string){
-    console.log(link);
+  linkStoryPulls(owner:string, repo: string){
+    debugger;
+    this.router.navigate([`/storyPulls/${owner}/${repo}`]);
   }
 
 }

@@ -13,7 +13,7 @@ export class ApiGithubService {
     return this.http.get('https://api.github.com/search/repositories?q=language:Javascript&sort=stars&page=1')
   }
 
-  getStoryPulls(link:string): Observable<any>{
-    return this.http.get(link);
+  getStoryPulls(owner:string, repo:string): Observable<any>{
+    return this.http.get(`https://api.github.com/repos/${owner}/${repo}/pulls`);
   }
 }

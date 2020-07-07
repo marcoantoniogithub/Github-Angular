@@ -1,10 +1,10 @@
-<div *ngFor="let repo of dateRepositories.items" class="container" (click)="linkStoryPulls(repo.pulls_url)">
+<div *ngFor="let repo of dateRepositories.items" class="container" (click)="linkStoryPulls(repo.owner.login, repo.name)">
     <div>
         <img src="{{repo.owner.avatar_url}}" alt="" width="154px">
     </div>
     <div class="conteudo">
         <p>nome: {{repo.name}}</p>
         <p>forks: {{repo.forks}}</p>
-        <p>watchers: {{repo.watchers}}</p>
+        <p>Stars: {{repo.stargazers_count}}</p>
     </div>
 </div>
