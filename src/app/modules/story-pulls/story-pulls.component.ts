@@ -34,7 +34,7 @@ export class StoryPullsComponent implements OnInit {
   }
 
   acessCommit(link:string): void {
-    window.open(link);
+    window.open(link, '_blank');
   }
 
 }

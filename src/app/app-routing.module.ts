@@ -12,6 +12,10 @@ const routes: Routes = [
   {
     path:'storyPulls/:owner/:repo',
     component: StoryPullsComponent
+  },
+  { 
+    path: '**',
+    component: MainPageComponent
   }
 ];
 

@@ -34,7 +34,6 @@ export class MainPageComponent implements OnInit {
   }
 
   linkStoryPulls(owner:string, repo: string){
-    debugger;
     this.router.navigate([`/storyPulls/${owner}/${repo}`]);
   }
 

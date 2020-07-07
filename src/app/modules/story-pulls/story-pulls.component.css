@@ -11,12 +11,13 @@
 }
 nav{
     background-color: #24292e;
-    padding: 16px;
-    font-size: 14px;
-    line-height: 1.5;
+    padding: 15px;
     color: white;
-    font-weight: 400;
-    font-size: 20px;
+}
+
+nav h1 {
+    text-align: center;
+    margin: 0px;
 }
 .body{
     text-overflow: ellipsis;
@@ -25,4 +26,8 @@ nav{
 }
 .title{
     font-weight: bold;
+}
+
+nav button {
+    float: left;
 }

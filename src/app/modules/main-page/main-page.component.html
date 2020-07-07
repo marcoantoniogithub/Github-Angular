@@ -1,5 +1,7 @@
 
-<nav>Repositories</nav>
+<nav>
+    <h1>Story pulls</h1>
+</nav>
 <div class="container">
     <mat-card *ngFor="let repo of dateRepositories.items" class="example-card" (click)="linkStoryPulls(repo.owner.login, repo.name)">
         <mat-card-header>

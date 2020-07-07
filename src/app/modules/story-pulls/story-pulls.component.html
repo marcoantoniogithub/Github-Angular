@@ -1,19 +1,9 @@
-<!-- <div *ngFor="let pull of datePulls" (click)="acessCommit(pull.html_url)" >
-    <div class="container">
-        <div>
-            <img src="{{pull.user.avatar_url}}" alt="" width="154px">
-        </div>
-        <div class="conteudo">
-            <p>nome: {{pull.user.login}}</p>
-            <p>data: {{pull.created_at}}</p>
-        </div>
-    </div>
-    <p>Title: {{pull.title}}</p>
-        <p>body: {{pull.body}}</p>
-</div> -->
-
-
-<nav>Story pulls</nav>
+<nav>
+    <button mat-button routerLink="[/]">
+        <mat-icon>arrow_back</mat-icon>
+    </button>
+    <h1>Story pulls</h1>
+</nav>
 <div class="container">
     <mat-card *ngFor="let pull of datePulls" class="example-card" (click)="acessCommit(pull.html_url)">
         <mat-card-header>
