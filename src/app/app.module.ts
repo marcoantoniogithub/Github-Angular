@@ -6,7 +6,10 @@ import { AppComponent } from './app.component';
 import { MainPageComponent } from './modules/main-page/main-page.component';
 import { ApiGithubService } from './core/service/api-github.service';
 import { HttpClientModule } from '@angular/common/http';
-import { StoryPullsComponent } from './modules/story-pulls/story-pulls.component'
+import { StoryPullsComponent } from './modules/story-pulls/story-pulls.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatCardModule} from '@angular/material/card';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -17,7 +20,10 @@ import { StoryPullsComponent } from './modules/story-pulls/story-pulls.component
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatCardModule,
+    MatButtonModule
   ],
   providers: [ApiGithubService],
   bootstrap: [AppComponent]

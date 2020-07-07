@@ -23,6 +23,9 @@ export class StoryPullsComponent implements OnInit {
       data => {
         this.datePulls = data;
         console.log(this.datePulls);
+        this.datePulls.map( element => {
+          console.log(element.created_at);
+        });
       },
       error => {
         console.log(error);
