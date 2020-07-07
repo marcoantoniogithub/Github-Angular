@@ -1,4 +1,4 @@
-<div *ngFor="let pull of datePulls">
+<div *ngFor="let pull of datePulls" (click)="acessCommit(pull.html_url)" >
     <div class="container">
         <div>
             <img src="{{pull.user.avatar_url}}" alt="" width="154px">

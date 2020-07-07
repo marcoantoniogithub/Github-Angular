@@ -30,4 +30,8 @@ export class StoryPullsComponent implements OnInit {
     )
   }
 
+  acessCommit(link:string): void {
+    window.open(link);
+  }
+
 }
