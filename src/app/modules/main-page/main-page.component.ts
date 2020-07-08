@@ -9,8 +9,8 @@ import { Router } from '@angular/router';
 })
 export class MainPageComponent implements OnInit {
 
-  dateRepositories:any;
-  dateWithFilter:any;
+  dateRepositories:any[] = [];
+  dateWithFilter:any[] = [];
   value: string;
 
   constructor(
@@ -26,9 +26,8 @@ export class MainPageComponent implements OnInit {
   getRepositories(){
     this.apiGithubService.getRepo().subscribe(
       data => {
-        this.dateRepositories = data.items;
-        this.dateWithFilter = data.items;
-        console.log(this.dateRepositories);
+        this.dateRepositories.push(...data.items);
+        this.dateWithFilter.push(...data.items);
       },
       error => {
         console.log(error);
@@ -45,9 +44,13 @@ export class MainPageComponent implements OnInit {
     this.dateWithFilter = this.dateRepositories.filter( element => {
       return element.name.trim().toLocaleLowerCase().indexOf(filterValue) != -1;
     });
-    if(this.dateWithFilter.length() > 1){
+    if(this.dateWithFilter.length > 1){
       this.dateWithFilter = this.dateRepositories;
     }
+  }
+
+  onScroll() {
+    this.getRepositories();
   }
 
 }

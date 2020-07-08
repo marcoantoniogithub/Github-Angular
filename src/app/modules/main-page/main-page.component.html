@@ -11,7 +11,7 @@
     </button>
 </mat-form-field>
 
-<div class="container">
+<div class="container" infiniteScroll [infiniteScrollThrottle]="500" [infiniteScrollDistance]="1" (scrolled)="onScroll()">
     <mat-card *ngFor="let repo of dateWithFilter" class="example-card" (click)="linkStoryPulls(repo.owner.login, repo.name)">
         <mat-card-header>
             <img mat-card-avatar src="{{repo.owner.avatar_url}}" alt="">
