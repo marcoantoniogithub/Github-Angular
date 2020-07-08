@@ -10,6 +10,8 @@ import { Router } from '@angular/router';
 export class MainPageComponent implements OnInit {
 
   dateRepositories:any;
+  dateWithFilter:any;
+  value: string;
 
   constructor(
     private apiGithubService: ApiGithubService,
@@ -24,7 +26,9 @@ export class MainPageComponent implements OnInit {
   getRepositories(){
     this.apiGithubService.getRepo().subscribe(
       data => {
-        this.dateRepositories = data;
+        this.dateRepositories = data.items;
+        this.dateWithFilter = data.items;
+        console.log(this.dateRepositories);
       },
       error => {
         console.log(error);
@@ -34,6 +38,16 @@ export class MainPageComponent implements OnInit {
 
   linkStoryPulls(owner:string, repo: string){
     this.router.navigate([`/storyPulls/${owner}/${repo}`]);
+  }
+
+  filter(event: Event){
+    const filterValue = (event.target as HTMLInputElement).value.trim().toLocaleLowerCase();
+    this.dateWithFilter = this.dateRepositories.filter( element => {
+      return element.name.trim().toLocaleLowerCase().indexOf(filterValue) != -1;
+    });
+    if(this.dateWithFilter.length() > 1){
+      this.dateWithFilter = this.dateRepositories;
+    }
   }
 
 }

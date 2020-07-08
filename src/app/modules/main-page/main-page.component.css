@@ -1,6 +1,6 @@
 .example-card {
     width: 250px;
-    margin: 10px;
+    margin: 20px;
 }
 
 .container{
@@ -18,4 +18,10 @@ nav{
 nav h1 {
     text-align: center;
     margin: 0px;
+}
+
+.centralizar {
+    display: flex;
+    justify-content: space-around;
+    margin:16px;
 }

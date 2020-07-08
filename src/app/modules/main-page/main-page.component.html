@@ -2,8 +2,17 @@
 <nav>
     <h1>Repositories</h1>
 </nav>
+
+<mat-form-field class="centralizar">
+    <mat-placeholder>Search for repositories</mat-placeholder>
+    <input matInput type="text" [(ngModel)]="value" (keyup)="filter($event)">
+    <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+        <mat-icon>close</mat-icon>
+    </button>
+</mat-form-field>
+
 <div class="container">
-    <mat-card *ngFor="let repo of dateRepositories.items" class="example-card" (click)="linkStoryPulls(repo.owner.login, repo.name)">
+    <mat-card *ngFor="let repo of dateWithFilter" class="example-card" (click)="linkStoryPulls(repo.owner.login, repo.name)">
         <mat-card-header>
             <img mat-card-avatar src="{{repo.owner.avatar_url}}" alt="">
             <mat-card-title>{{repo.name}}</mat-card-title>

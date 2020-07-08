@@ -8,9 +8,11 @@ import { ApiGithubService } from './core/service/api-github.service';
 import { HttpClientModule } from '@angular/common/http';
 import { StoryPullsComponent } from './modules/story-pulls/story-pulls.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatCardModule} from '@angular/material/card';
-import {MatButtonModule} from '@angular/material/button';
-import {MatIconModule} from '@angular/material/icon';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { FormsModule }   from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import {MatIconModule} from '@angular/material/icon';
     BrowserAnimationsModule,
     MatCardModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    MatInputModule,
+    FormsModule
   ],
   providers: [ApiGithubService],
   bootstrap: [AppComponent]
